@@ -68,7 +68,7 @@ public class Oyun extends JPanel implements KeyListener,ActionListener{
     
     private int fireDir = 1;
     
-    private int ballX = 0;
+    private int ballX = 0; //Where the ball start
     
     private int ballDirX = 2; // number to be increased by by action performed 
     
@@ -123,10 +123,10 @@ public class Oyun extends JPanel implements KeyListener,ActionListener{
        if(isChecked()){
            timer.stop();
            long finalTime = System.currentTimeMillis();
-           String outString= "Oyunu kazandiniz...\n"
-                   + "Gecen süre : " + (finalTime - passingTime) / 1000 
-                   + " sn.\n"
-                   + "Ates sayisi : "
+           String outString= "Won the game\n"
+                   + "Lasting Time : " + (finalTime - passingTime) / 1000
+                   + " sc.\n"
+                   + "Fired fire : "
                    + firesFired;
            JOptionPane.showMessageDialog(this, outString);
            
@@ -180,7 +180,7 @@ public class Oyun extends JPanel implements KeyListener,ActionListener{
       int press = e.getKeyCode();
        // System.out.println(e.getKeyChar());
         
-        if(press == KeyEvent.VK_LEFT){
+        if(press == KeyEvent.VK_D){
             if(spaceShipX <= 0){
                 spaceShipX = 0;
             }
@@ -188,7 +188,7 @@ public class Oyun extends JPanel implements KeyListener,ActionListener{
                 spaceShipX -= spaceShipDirX;
             }
         }
-        else if(press == KeyEvent.VK_RIGHT){
+        else if(press == KeyEvent.VK_A){
             if(spaceShipX >= 740){
                 spaceShipX = 740;
             }
