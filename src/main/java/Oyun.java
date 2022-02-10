@@ -196,7 +196,7 @@ public class Oyun extends JPanel implements KeyListener,ActionListener{
                 spaceShipX += spaceShipDirX;
             }
         }
-        else if(press == KeyEvent.VK_CONTROL){
+        else if(press == KeyEvent.VK_W){
             atesList.add(new Ates(spaceShipX + 18, 480));
             firesFired++;
         }
